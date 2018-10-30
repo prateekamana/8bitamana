@@ -1,4 +1,4 @@
-
+A simple 8bit platformer game made using godot engine 3.0.6 
 Hope it helps you through your godot journey as a beginner ^~^
 
 
