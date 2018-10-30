@@ -11,7 +11,11 @@ Itch.io: https://vnitti.itch.io/
 Portfolio: https://vnitti.wixsite.com/site
 
 Player sprites edited from :
+
+
 https://opengameart.org/content/class...
 
 Music from:
+
+
 https://jonathan-so.itch.io/creatorpack
