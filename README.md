@@ -1,3 +1,7 @@
+
+Hope it helps you through your godot journey as a begineer ^~^.
+
+
 Credits:
 
 Background art by Vicente Nitti (@vnitti) :
