@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Idle/Amana_Idle2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Idle/Amana_Idle1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Idle/Amana_Idle3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Idle/Amana_Idle4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Moving/Amana_Movement1.1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Moving/Amana_Movement1.2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Moving/Amana_Movement1.3.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "movement",
+"speed": 12.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 28.7664
+height = 23.3455
+
+[node name="player" type="KinematicBody2D"]
+
+position = Vector2( 547.82, 240.506 )
+z_index = 1
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="sprite" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 2.4, 2.4 )
+frames = SubResource( 1 )
+animation = "movement"
+frame = 2
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="collision" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 4, 0.308594 )
+scale = Vector2( 1, 0.984083 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="ground_ray" type="RayCast2D" parent="." index="2"]
+
+position = Vector2( 3.5, 23 )
+scale = Vector2( 1, 0.4 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="camera" type="Camera2D" parent="." index="3"]
+
+offset = Vector2( 0, -130 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.9, 0.9 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Limit", "Offset", "Smoothing" ]
+
+
