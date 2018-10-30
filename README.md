@@ -1,5 +1,5 @@
 
-Hope it helps you through your godot journey as a begineer ^~^.
+Hope it helps you through your godot journey as a beginner ^~^
 
 
 Credits:
